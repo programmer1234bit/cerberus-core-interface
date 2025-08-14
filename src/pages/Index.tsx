@@ -1,12 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Header } from "@/components/ui/header";
+import { Footer } from "@/components/ui/footer";
+import { ChatPanel } from "@/components/chat/ChatPanel";
+import { VoicePanel } from "@/components/voice/VoicePanel";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col bg-background">
+      <Header />
+      
+      <main className="flex-1 flex p-6 gap-6">
+        {/* Chat Panel - 60% width */}
+        <div className="w-3/5">
+          <ChatPanel />
+        </div>
+        
+        {/* Voice Panel - 40% width */}
+        <div className="w-2/5">
+          <VoicePanel />
+        </div>
+      </main>
+      
+      <Footer />
     </div>
   );
 };
